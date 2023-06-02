@@ -1,0 +1,35 @@
+#include<ESP8266WiFi.h>
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin("Airel_6294472602", "air51460");
+  // Serial.print("Connecting to wifi");
+  // while(WiFi.status() != WL_CONNECTED)
+  // {
+  //   Serial.print(".");
+  //   delay(200);
+  // }
+  // Serial.println("IP Address:");
+  // Serial.println(WiFi.localIP());
+  // Serial.println("MacAddress:");
+  // Serial.println(WiFi.macAddress());
+}
+
+// the loop function runs over and over again forever
+void loop() {
+
+  Serial.print("Connecting to wifi");
+  while(WiFi.status() != WL_CONNECTED)
+  {
+    Serial.print(".");
+    delay(200);
+  }
+  Serial.println("IP Address:");
+  Serial.println(WiFi.localIP());
+  Serial.println("MacAddress:");
+  Serial.println(WiFi.macAddress());
+
+  delay(5000);
+  
+}
